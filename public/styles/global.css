@@ -47,10 +47,15 @@
 	--text-large: 16px;
 	--text-x-large: 20px;
 	--text-xx-large: 24px;
-	--text-xxx-large: 44px;
+	--text-xxx-large: 66px;
 	--text-title: 18px;
 	--text-general: 16px;
 	--text-button: 12px;
 
-	--hero-bg: radial-gradient(from var(--primary-20) to var(--primary-0));
+	--hero-bg: linear-gradient(
+		-54deg,
+		var(--primary-0) -23%,
+		var(--primary-20),
+		var(--primary-0) 51%
+	);
 }
