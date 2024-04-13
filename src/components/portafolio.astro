@@ -1,8 +1,6 @@
 ---
 import Title from "./atoms/Title.astro";
 import Card from "./Card.astro";
-
-
 const portafolioData = [
   {
     title:"Mi primera chamba",
@@ -28,7 +26,6 @@ const portafolioData = [
 <section class="flex-col w-full h-full  justify-center flex-wrap">
   <Title contenido="Portafolio"/>
   <div class="flex self-center gap-[20px] justify-center flex-wrap">
-
     {
       portafolioData.map((data)=>(
         <Card
@@ -39,6 +36,5 @@ const portafolioData = [
         />
         ))
       }
-
 </div>
 </section>
