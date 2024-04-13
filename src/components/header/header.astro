@@ -1,5 +1,6 @@
 ---
 import './header.css';
+const { title } = Astro.props;
 ---
 
 <nav class="header__nav">
@@ -10,7 +11,7 @@ import './header.css';
 			width="40px"
 			height="40px"
 		/>
-		<h1>Site title</h1>
+		<h1>{ title }</h1>
 	</a>
 	<div class="links">
 		<a href="#home"><span>Home</span></a>
