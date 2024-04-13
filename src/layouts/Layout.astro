@@ -17,9 +17,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-	<main>
-		<slot />
-	</main>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 <style is:global>
@@ -33,10 +33,22 @@ const { title } = Astro.props;
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: #ececec;
+    background: rgb(13, 0, 69);
+    background: linear-gradient(
+      225deg,
+      rgba(13, 0, 69, 1) 0%,
+      rgba(2, 3, 18, 1) 32%,
+      rgba(10, 1, 57, 1) 81%,
+      rgba(0, 3, 8, 1) 100%
+    );
   }
-  main{
-	width: 80%;
-	align-self: center;
+  main {
+    align-self: center;
+  }
+
+  .color__gradiente{
+    background: -webkit-linear-gradient(#08ffe6, #bb01b1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
