@@ -1,0 +1,44 @@
+---
+import Title from "./atoms/Title.astro";
+import Card from "./Card.astro";
+
+
+const portafolioData = [
+  {
+    title:"Mi primera chamba",
+    content:"lorem ipsum de mi primera chamba",
+    img:"../img/monachina.jpg",
+    href:"#"
+  },
+  {
+    title:"Mi segunda chamba",
+    content:"lorem ipsum de mi segunda chamba",
+    img:"../img/monachina2.jpg",
+    href:"#"
+  },
+  {
+    title:"Mi tercera chamba",
+    content:"lorem ipsum de mi tercera chamba",
+    img:"../img/pingu.jpg",
+    href:"#"
+  }
+
+]
+---
+<section class="flex-col w-full h-full  justify-center flex-wrap">
+  <Title contenido="Portafolio"/>
+  <div class="flex self-center gap-[20px] justify-center flex-wrap">
+
+    {
+      portafolioData.map((data)=>(
+        <Card
+        title={data.title}
+        content={data.content}
+        img={data.img}
+        href={data.href}
+        />
+        ))
+      }
+
+</div>
+</section>
