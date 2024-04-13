@@ -13,6 +13,7 @@
 
 		h1 {
 			font-size: var(--text-title);
+            font-weight: 600;
 		}
 	}
 
