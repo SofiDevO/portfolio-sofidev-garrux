@@ -1,26 +1,34 @@
 ---
 import { getCollection } from "astro:content";
-
-
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/BlogLayout.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<section>
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`}>
-            <div>
+<Layout title="Blog">
+  <section>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a class="w-[40rem]" href={`/blog/${post.slug}/`}>
+              <img
+                src={post.data.heroImage}
+                width={720}
+                height={360}
+                alt={post.data.title}
+              />
+              <div>
                 <h4>{post.data.title}</h4>
                 <p>{post.data.description}</p>
-            </div>
-            <img src={post.data.heroImage} alt={post.data.title}/>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</section>
+
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

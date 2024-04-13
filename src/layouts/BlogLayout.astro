@@ -1,8 +1,8 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import FormatedDate from '../components/FormatedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
-type Props = CollectionEntry<'blog'>["data"];
+type Props = CollectionEntry<"blog">["data"];
 ---
 
 <!doctype html>
@@ -12,16 +12,13 @@ type Props = CollectionEntry<'blog'>["data"];
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator}/>
     <title>Blog</title>
   </head>
   <body>
-	<main>
-    <div>
-      <!-- <FormatedDate date={pubDate}/> -->
-    </div>
-    <h1>{title}</h1>
-		<slot/>
-	</main>
+    <main>
+      <section>
+        <slot />
+      </section>
+    </main>
   </body>
 </html>
