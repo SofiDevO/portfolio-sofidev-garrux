@@ -12,7 +12,7 @@ const posts = (await getCollection("blog")).sort(
   <a href="/blog">
     <Title contenido="Mis artículos" />
   </a>
-  <div class="flex justify-center w-[80%] gap-10">
+  <div class="flex justify-center w-[100%] gap-10">
     {
       posts.slice(1, 4).map((post) => (
         <Card
