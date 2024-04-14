@@ -3,14 +3,13 @@ interface Props {
     date: Date;
 }
 
-const { date } = Astro.props;
-
+const date = new Date(Astro.props.date);
 ---
 
-<time datetime={new Date(date).toISOString()}>
+<time datetime={date.toISOString()}>
     {
-        new Date(date).toLocaleDateString('es-mx', {
-            year: 'numeric',
+        date.toLocaleDateString('es-mx', {
+			year: 'numeric',
             month: 'short',
             day: 'numeric',
         })
