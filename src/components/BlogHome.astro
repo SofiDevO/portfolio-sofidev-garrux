@@ -9,10 +9,10 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<section class="flex-col w-full h-auto max-h-[100dvh] items-center justify-center">
+<section class="flex-col w-full h-full  justify-center flex-wrap">
 
   <Title contenido="Mis artículos" />
-  <div class="flex justify-center w-[100%] gap-10">
+  <div class="flex self-center gap-[20px] justify-center flex-wrap">
     {
       posts.slice(1, 4).map((post) => (
         <Card
@@ -24,8 +24,7 @@ const posts = (await getCollection("blog")).sort(
       ))
     }
   </div>
-  <div class="flex justify-center">
+  <div class="flex justify-center m-5">
     <Boton href="/blog" texto="Ver mas"/>
   </div>
-
 </section>
