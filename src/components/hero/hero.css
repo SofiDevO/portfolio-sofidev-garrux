@@ -34,19 +34,7 @@
 				max-width: 80%;
 			}
 
-			button {
-				padding: 12px 44px;
-				background: var(--primary);
-				border-radius: 100px;
-				font-size: var(--text-xx-large);
-				transition: 0.35s opacity;
-			}
-			button:hover {
-				opacity: 0.7;
-			}
-			button:active {
-				opacity: 0.5;
-			}
+
 		}
 	}
 }

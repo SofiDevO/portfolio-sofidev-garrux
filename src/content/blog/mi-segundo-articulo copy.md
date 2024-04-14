@@ -1,7 +1,7 @@
 ---
 title: "JavaScript:Funciones y ambito de las variables"
 description: "Funciones y Comprendiendo Variables"
-pubDate: 'Abr 13 2024'
+pubDate: 'Apr 13 2024'
 heroImage: "../img/monachina2.jpg"
 ---
 

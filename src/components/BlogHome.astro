@@ -2,16 +2,16 @@
 import Card from "../components/Card.astro";
 import Title from "../components/atoms/Title.astro";
 import { getCollection } from "astro:content";
+import Boton from "./atoms/Boton.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<section class="flex-col w-full h-full">
-  <a href="/blog">
-    <Title contenido="Mis artículos" />
-  </a>
+<section class="flex-col w-full h-auto max-h-[100dvh] items-center justify-center">
+
+  <Title contenido="Mis artículos" />
   <div class="flex justify-center w-[100%] gap-10">
     {
       posts.slice(1, 4).map((post) => (
@@ -24,4 +24,8 @@ const posts = (await getCollection("blog")).sort(
       ))
     }
   </div>
+  <div class="flex justify-center">
+    <Boton href="/blog" texto="Ver mas"/>
+  </div>
+
 </section>
