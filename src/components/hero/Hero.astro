@@ -1,0 +1,29 @@
+---
+import './hero.css';
+import Header from '../header/Header.astro';
+---
+
+<section class="hero">
+	<Header title="Titulo del sitio"/>
+	<div class="hero__container">
+		<div class="text__content">
+			<h2 class="hero__title">Un titulo inspirador y atractivo</h2>
+			<p class="hero__text">
+				Una descripción breve y llamativa sobre el tema principal del
+				sitio
+			</p>
+			<a href="#">
+				<button class="primary" name="learn-more"
+					>Quiero saber más</button
+				>
+			</a>
+		</div>
+    <img
+		class="hero__img"
+		src="https://itssofi.dev/img/avatar-black.webp"
+		alt="Pingu"
+		width="384"
+    	height="384"
+	/>
+	</div>
+</section>
