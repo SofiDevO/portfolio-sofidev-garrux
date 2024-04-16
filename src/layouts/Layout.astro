@@ -1,52 +1,34 @@
 ---
 interface Props {
-  title: string;
+	title: string;
 }
-
 const { title } = Astro.props;
+import Header from '../components/header/Header.astro';
+import { mainMenu } from '../components/data/menuData';
 ---
 
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <main>
-      <slot />
-    </main>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="./src/styles/global.css" />
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header origin={mainMenu} name="SofiDev"/>
+		<main>
+			<slot />
+		</main>
+	</body>
 </html>
-<style is:global>
-  :root {
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    font-size: 62.5%;
-  }
-  body {
-    width: 100%;
-    background: rgb(13, 0, 69);
-    background: linear-gradient(
-      225deg,
-      rgba(13, 0, 69, 1) 0%,
-      rgba(2, 3, 18, 1) 32%,
-      rgba(10, 1, 57, 1) 81%,
-      rgba(0, 3, 8, 1) 100%
-    );
-  }
-  main {
-    align-self: center;
-  }
-
-  .color__gradiente{
-    background: -webkit-linear-gradient(#08ffe6, #bb01b1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-</style>

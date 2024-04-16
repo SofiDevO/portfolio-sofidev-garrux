@@ -42,15 +42,17 @@
 	--on-secondary: var(--secondary-95);
 
 	/* texto  */
-	--text-small: 12px;
-	--text-medium: 14px;
-	--text-large: 16px;
-	--text-x-large: 20px;
-	--text-xx-large: 24px;
-	--text-xxx-large: 66px;
-	--text-title: 18px;
-	--text-general: 16px;
-	--text-button: 12px;
+	--text-small: 1.2rem;
+	--text-medium: 1.4rem;
+	--text-large: 1.6rem;
+	--text-x-large: 2rem;
+	--text-xx-large: 2.4rem;
+	--text-xxx-large: 6.6rem;
+	--text-title: 2rem;
+	--text-general: 1.6rem;
+	--text-button: 1.2rem;
+	--font-montserrat: "Montserrat", sans-serif;
+
 
 	--hero-bg: linear-gradient(
 		-54deg,
@@ -58,4 +60,22 @@
 		var(--primary-20),
 		var(--primary-0) 51%
 	);
+	--text-gradient: -webkit-linear-gradient(#08ffe6, #bb01b1);
+}
+html {
+	font-family: var(--font-montserrat)!important;
+	font-size: 62.5%;
+}
+body {
+	width: 100%;
+	background: var(--hero-bg) no-repeat;
+}
+main {
+	align-self: center;
+}
+
+.color__gradiente {
+	background: var(--text-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

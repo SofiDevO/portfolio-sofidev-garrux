@@ -1,21 +1,29 @@
 ---
 import './header.css';
-const { title } = Astro.props;
+const { origin, name } = Astro.props;
 ---
 
-<nav class="header__nav">
-	<a href="/" class="profile">
-		<img
-			src="https://itssofi.dev/img/avatar-black.webp"
-			alt="sofiDev img"
-			width="40px"
-			height="40px"
-		/>
-		<h1>{ title }</h1>
-	</a>
-	<div class="links">
-		<a href="#home"><span>Home</span></a>
-		<a href="#about_me"><span>Sobre mi</span></a>
-		<a href="#contact"><span>Contactame</span></a>
+<header class="header">
+	<div class="header__container">
+		<a href="/" class="profile">
+			<img
+				src="https://itssofi.dev/img/avatar-black.webp"
+				alt="sofiDev img"
+				width="40px"
+				height="40px"
+			/>
+			<h1 class="color__gradiente header__title">{name}</h1>
+		</a>
+		<nav class="links">
+			<ul class="header__list">
+				{
+					origin.map((data) => (
+						<li>
+							<a href={data.link}>{data.content}</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
 	</div>
-</nav>
+</header>
