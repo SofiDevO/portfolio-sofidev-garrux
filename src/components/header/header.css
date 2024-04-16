@@ -1,20 +1,45 @@
-.header__nav {
+.header {
 	display: flex;
 	width: 100%;
-	padding: 10px 0;
-	justify-content: space-between;
+	padding-top: 2rem;
+	justify-content: center;
 	align-items: center;
 	color: var(--on-primary);
-
+	position: fixed;
+	z-index: 3;
 	.profile {
 		display: flex;
 		align-items: center;
 		gap: 22px;
 
-		h1 {
+		.header__title {
 			font-size: var(--text-title);
-            font-weight: 600;
+			font-weight: 600;
+			cursor: pointer;
 		}
+		.header__title:hover{
+			transform: scale(1.1);
+
+		}
+	}
+	.header__container {
+		display: flex;
+		width: 80%;
+		justify-content: space-between;
+		background: #00000033;
+		backdrop-filter: blur(20px);
+		padding: 1rem 2rem;
+		border-radius: 14px;
+		height: auto;
+		min-height: 7rem;
+		border: 0.03px solid #7c39fd47;
+	}
+	.header__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 2rem;
+		margin-right: 4.4rem;
 	}
 
 	.links {
@@ -39,7 +64,7 @@
 			transition: 0.35s transform;
 		}
 		a:hover {
-            color: var(--primary-90);
+			color: var(--primary-90);
 			&::after {
 				transform: scale(1);
 			}
