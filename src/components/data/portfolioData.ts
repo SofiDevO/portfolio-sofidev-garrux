@@ -5,6 +5,7 @@ export const portafolioData: PortafolioData[] = [
 		imgSrc: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/06/copy-of-the-6-best-restaurant-website-templates-1.png',
 		titulo: 'Restaurant',
 		skills: ['React', 'StyledComponents'],
+		imgAlt: 'Restaurant',
 		descripcion:
 			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
 		demoURL: '',
@@ -15,6 +16,7 @@ export const portafolioData: PortafolioData[] = [
 		imgSrc: 'https://themewagon.com/wp-content/uploads/2020/12/eflyer.jpg',
 		titulo: 'E-commerce',
 		skills: ['JavaScript', 'Bootstrap'],
+		imgAlt: 'E-commerce',
 		descripcion:
 			' Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
 		demoURL: '',
@@ -25,6 +27,7 @@ export const portafolioData: PortafolioData[] = [
 		imgSrc: 'https://i0.wp.com/themes.svn.wordpress.org/cafe-cafeteria/1.5.3/screenshot.png',
 		titulo: 'Coffe Store',
 		skills: ['React', 'CSS'],
+		imgAlt: 'Coffe Store',
 		descripcion:
 			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
 		demoURL: '',
