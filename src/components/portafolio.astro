@@ -1,77 +1,17 @@
 ---
 import Title from './atoms/Title.astro';
-import { portafolioData, skillIcons } from './data/portfolioData';
+import { getPortafolioData } from './data/portfolioData';
+import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
 <script>
-  const Patata = document.querySelector(".pata")
+	const Patata = document.querySelector('.pata');
 </script>
 
 <section class="flex-col w-full h-auto justify-center flex-wrap">
 	<Title contenido="Portafolio" />
 	<div class="portfolio__elements">
-		{
-			portafolioData.slice(0, 3).map((data) => (
-				<div class="portfolio__card" data-aos={data.anim}>
-					<div class="portfolio__card--a ">
-						<img
-							class={`portfolio__img`}
-							src={data.imgSrc}
-							alt={data.titulo}
-						/>
-					</div>
-					<div class="portfolio__card--b">
-						<h3 class="portfolio__title ">{data.titulo}</h3>
-            <div class="portfolio__content">
-						<p class="portfolio__description ">
-							{data.descripcion}
-						</p>
-						<div class="skills__used">
-							{data.skills.map((skill) => (
-								<div class="tecnology">
-									<iconify-icon
-                    class="iconify"
-										icon={skillIcons[skill] || ''}
-									/>
-								</div>
-							))}
-						</div>
-          </div>
-
-						<div class="portfolio__links">
-							<a
-								class=" boton "
-								href={data.demoURL}
-								target="_blank"
-								rel="nofollow noreferrer noopener"
-							>
-								<span
-									data-section="portafolio"
-									data-value="demo"
-								>
-									View Demo
-                  <iconify-icon icon="quill:link-out" width="10" height="10"></iconify-icon>
-								</span>
-							</a>
-							<a
-								class=" boton "
-								href={data.repoURL}
-								target="_blank"
-								rel="nofollow noreferrer noopener"
-							>
-								<span
-									data-section="portafolio"
-									data-value="repo"
-								>
-									View Repo
-                  <iconify-icon icon="quill:link-out" width="10" height="10"></iconify-icon>
-								</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			))
-		}
+		{getPortafolioData.map((props) => <Card {...props} />)}
 	</div>
 </section>
 
@@ -85,8 +25,6 @@ import { portafolioData, skillIcons } from './data/portfolioData';
 		gap: 2rem;
 		flex-wrap: wrap;
 	}
-
-
 
 	.portfolio__card {
 		display: flex;
@@ -121,9 +59,9 @@ import { portafolioData, skillIcons } from './data/portfolioData';
 		width: 239px;
 		overflow: hidden;
 		white-space: nowrap;
-    font-size: var(--text-medium);
-    margin-top: -2rem;
-    margin-bottom: 1rem;
+		font-size: var(--text-medium);
+		margin-top: -2rem;
+		margin-bottom: 1rem;
 	}
 
 	.portfolio__title {
@@ -135,37 +73,37 @@ import { portafolioData, skillIcons } from './data/portfolioData';
 		width: 19.1rem;
 		border-radius: 0 13px 0 0;
 		backdrop-filter: blur(10px);
-    padding-left: 2rem;
+		padding-left: 2rem;
 	}
-  .portfolio__content{
-    margin-left: 2rem;
-    margin-left: 2rem;
-  }
+	.portfolio__content {
+		margin-left: 2rem;
+		margin-left: 2rem;
+	}
 
-.skills__used{
-  display: flex;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-.iconify{
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-}
-.portfolio__links{
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 2rem;
-}
+	.skills__used {
+		display: flex;
+		width: 100%;
+		justify-content: flex-start;
+		gap: 1rem;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+	.iconify {
+		width: 20px;
+		height: 20px;
+		font-size: 20px;
+	}
+	.portfolio__links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		gap: 2rem;
+	}
 	.portfolio__card:hover .portfolio__title {
 		transform: translateY(0%);
-    margin-bottom: 2rem;
-    backdrop-filter: unset;
+		margin-bottom: 2rem;
+		backdrop-filter: unset;
 	}
 	.portfolio__card:hover .portfolio__description {
 		text-overflow: unset;
@@ -175,7 +113,5 @@ import { portafolioData, skillIcons } from './data/portfolioData';
 	}
 	.portfolio__card:hover > .portfolio__card--b {
 		transform: translateY(-0%);
-
 	}
-
 </style>
