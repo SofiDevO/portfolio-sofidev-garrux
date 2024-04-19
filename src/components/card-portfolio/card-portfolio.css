@@ -56,7 +56,7 @@
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				max-height: 20px;
+				height: 20px;
 				transition: 0.35s height;
 				&::-webkit-scrollbar {
 					width: 4px;
