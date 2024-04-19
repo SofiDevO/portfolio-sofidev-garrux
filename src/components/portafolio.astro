@@ -1,40 +1,181 @@
 ---
-import Title from "./atoms/Title.astro";
-import Card from "./Card.astro";
-const portafolioData = [
-  {
-    title:"Mi primera chamba",
-    content:"lorem ipsum de mi primera chamba",
-    img:"../img/monachina.jpg",
-    href:"#"
-  },
-  {
-    title:"Mi segunda chamba",
-    content:"lorem ipsum de mi segunda chamba",
-    img:"../img/monachina2.jpg",
-    href:"#"
-  },
-  {
-    title:"Mi tercera chamba",
-    content:"lorem ipsum de mi tercera chamba",
-    img:"../img/pingu.jpg",
-    href:"#"
+import Title from './atoms/Title.astro';
+import { portafolioData, skillIcons } from './data/portfolioData';
+---
+
+<script>
+  const Patata = document.querySelector(".pata")
+</script>
+
+<section class="flex-col w-full h-auto justify-center flex-wrap">
+	<Title contenido="Portafolio" />
+	<div class="portfolio__elements">
+		{
+			portafolioData.slice(0, 3).map((data) => (
+				<div class="portfolio__card" data-aos={data.anim}>
+					<div class="portfolio__card--a ">
+						<img
+							class={`portfolio__img`}
+							src={data.imgSrc}
+							alt={data.titulo}
+						/>
+					</div>
+					<div class="portfolio__card--b">
+						<h3 class="portfolio__title ">{data.titulo}</h3>
+            <div class="portfolio__content">
+						<p class="portfolio__description ">
+							{data.descripcion}
+						</p>
+						<div class="skills__used">
+							{data.skills.map((skill) => (
+								<div class="tecnology">
+									<iconify-icon
+                    class="iconify"
+										icon={skillIcons[skill] || ''}
+									/>
+								</div>
+							))}
+						</div>
+          </div>
+
+						<div class="portfolio__links">
+							<a
+								class=" boton "
+								href={data.demoURL}
+								target="_blank"
+								rel="nofollow noreferrer noopener"
+							>
+								<span
+									data-section="portafolio"
+									data-value="demo"
+								>
+									View Demo
+                  <iconify-icon icon="quill:link-out" width="10" height="10"></iconify-icon>
+								</span>
+							</a>
+							<a
+								class=" boton "
+								href={data.repoURL}
+								target="_blank"
+								rel="nofollow noreferrer noopener"
+							>
+								<span
+									data-section="portafolio"
+									data-value="repo"
+								>
+									View Repo
+                  <iconify-icon icon="quill:link-out" width="10" height="10"></iconify-icon>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	.portfolio__elements {
+		display: flex;
+		width: 100%;
+		max-width: 1920px;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+
+
+
+	.portfolio__card {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		width: 33.2rem;
+		height: 24.6rem;
+		background: white;
+		border-radius: 19px;
+	}
+	.portfolio__card--a {
+		height: 0%;
+		width: 100%;
+	}
+	.portfolio__img {
+		object-fit: cover;
+		width: 100%;
+	}
+	.portfolio__card--b {
+		background: black;
+		transform: translateY(63%);
+		height: 24.6rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		color: white;
+		transition: 0.4s ease;
+	}
+	.portfolio__description {
+		text-overflow: ellipsis;
+		width: 239px;
+		overflow: hidden;
+		white-space: nowrap;
+    font-size: var(--text-medium);
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+	}
+
+	.portfolio__title {
+		font-size: var(--text-title);
+		transform: translateY(-100%);
+		transition: 0.4s;
+		padding: 0.5rem;
+		background: #0000004a;
+		width: 19.1rem;
+		border-radius: 0 13px 0 0;
+		backdrop-filter: blur(10px);
+    padding-left: 2rem;
+	}
+  .portfolio__content{
+    margin-left: 2rem;
+    margin-left: 2rem;
   }
 
-]
----
-<section class="flex-col w-full h-full  justify-center flex-wrap">
-  <Title contenido="Portafolio"/>
-  <div class="flex self-center gap-[20px] justify-center flex-wrap">
-    {
-      portafolioData.map((data)=>(
-        <Card
-        title={data.title}
-        content={data.content}
-        img={data.img}
-        href={data.href}
-        />
-        ))
-      }
-</div>
-</section>
+.skills__used{
+  display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.iconify{
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+.portfolio__links{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
+	.portfolio__card:hover .portfolio__title {
+		transform: translateY(0%);
+    margin-bottom: 2rem;
+    backdrop-filter: unset;
+	}
+	.portfolio__card:hover .portfolio__description {
+		text-overflow: unset;
+		width: unset;
+		overflow: unset;
+		white-space: unset;
+	}
+	.portfolio__card:hover > .portfolio__card--b {
+		transform: translateY(-0%);
+
+	}
+
+</style>
