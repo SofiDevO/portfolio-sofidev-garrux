@@ -33,7 +33,7 @@ export const portafolioData: PortafolioData[] = [
 	},
 ];
 
-export const skillIcons = {
+const skillIcons = {
 	JavaScript: 'skill-icons:javascript',
 	React: 'skill-icons:react-dark',
 	Astro: 'skill-icons:astro',
@@ -43,3 +43,9 @@ export const skillIcons = {
 	Bootstrap: 'skill-icons:bootstrap',
 	Tailwind: 'skill-icons:tailwindcss-dark',
 };
+
+export const getPortafolioData = (() =>
+	portafolioData.map((item) => ({
+		...item,
+		skills: item.skills.map((skill) => skillIcons[skill]),
+	})))();
