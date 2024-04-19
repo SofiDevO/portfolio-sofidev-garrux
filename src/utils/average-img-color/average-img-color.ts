@@ -4,27 +4,37 @@
  * @param brightness Que tanto brillo debe de tener el resultado del color
  * @param onerror
  * @returns ['rgb(r,g,b)', {r,g,b}]
- * @example 
+ * @example
  * 	const [colorString, colorObject] = getIMGAverageColor(img, 1);
  */
 export const getIMGAverageColor = (
 	img: HTMLImageElement,
 	brightness = 1,
 	onerror?: (error: Error) => void
-) => {
+): [string, object] => {
 	// Se crea un canvas para poder acceder a los pixeles
 	const canvas = document.createElement('canvas');
 	const ctx = canvas.getContext('2d');
+	let data: Uint8ClampedArray;
 	canvas.width = img.width;
 	canvas.height = img.height;
 
-	// Se dibuja la imagen en el canvas con posiciones x=0, y=0
-	if (!ctx) return onerror?.(new Error('Could not get 2d context'));
-	ctx.drawImage(img, 0, 0);
+	// Bloque try catch para evitar errores de acceso a los pixeles
+	try {
+		// Se dibuja la imagen en el canvas con posiciones x=0, y=0
+		if (!ctx) {
+			onerror?.(new Error('Could not get 2d context'));
+			return ['', {}];
+		}
+		ctx.drawImage(img, 0, 0);
 
-	// Se obtienen los datos de la imagen
-	const imageData = ctx.getImageData(0, 0, img.width, img.height);
-	const data = imageData.data;
+		// Se obtienen los datos de la imagen
+		const imageData = ctx.getImageData(0, 0, img.width, img.height);
+		data = imageData.data;
+	} catch (error) {
+		onerror?.(error as Error);
+		return ['', {}];
+	}
 
 	// Aquí se almacenarán los colores del lienzo
 	let red = 0;
