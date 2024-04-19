@@ -53,6 +53,10 @@ export const getIMGAverageColor = (
 	// Rojo, verde y azul entre la cantidad total de pixeled
 	// Tambien se multiplica por el brillo que se quiere que tenga el color
 	const numberOfPixels = canvas.width * canvas.height;
+	const dataBrightness = parseFloat(
+		img.getAttribute('average-brightness') || ''
+	);
+	brightness = dataBrightness || brightness;
 	red = (red / numberOfPixels) * brightness;
 	green = (green / numberOfPixels) * brightness;
 	blue = (blue / numberOfPixels) * brightness;
