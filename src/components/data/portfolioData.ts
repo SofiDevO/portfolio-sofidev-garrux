@@ -13,7 +13,7 @@ export const portafolioData: PortafolioData[] = [
 		anim: 'fade-right',
 	},
 	{
-		imgSrc: 'https://themewagon.com/wp-content/uploads/2020/12/eflyer.jpg',
+		imgSrc: 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/299377097/original/7eb7dcebe244fcf5ad75d92b0969fc116946bd57/create-professional-amd-responsive-wordpress-website.jpg',
 		titulo: 'E-commerce',
 		skills: ['JavaScript', 'Bootstrap'],
 		imgAlt: 'E-commerce',
@@ -22,6 +22,7 @@ export const portafolioData: PortafolioData[] = [
 		demoURL: '',
 		repoURL: '',
 		anim: 'fade-up',
+		averageBrightness: .1
 	},
 	{
 		imgSrc: 'https://i0.wp.com/themes.svn.wordpress.org/cafe-cafeteria/1.5.3/screenshot.png',
