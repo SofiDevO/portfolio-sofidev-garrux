@@ -4,10 +4,6 @@ import { getPortafolioData } from './data/portfolioData';
 import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
-<script>
-	const Patata = document.querySelector('.pata');
-</script>
-
 <section class="flex-col w-full h-auto justify-center flex-wrap">
 	<Title contenido="Portafolio" />
 	<div class="portfolio__elements">
@@ -25,93 +21,24 @@ import Card from './card-portfolio/CardPortfolio.astro';
 		gap: 2rem;
 		flex-wrap: wrap;
 	}
-
-	.portfolio__card {
-		display: flex;
-		flex-direction: column;
-		overflow: hidden;
-		width: 33.2rem;
-		height: 24.6rem;
-		background: white;
-		border-radius: 19px;
-	}
-	.portfolio__card--a {
-		height: 0%;
-		width: 100%;
-	}
-	.portfolio__img {
-		object-fit: cover;
-		width: 100%;
-	}
-	.portfolio__card--b {
-		background: black;
-		transform: translateY(63%);
-		height: 24.6rem;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		color: white;
-		transition: 0.4s ease;
-	}
-	.portfolio__description {
-		text-overflow: ellipsis;
-		width: 239px;
-		overflow: hidden;
-		white-space: nowrap;
-		font-size: var(--text-medium);
-		margin-top: -2rem;
-		margin-bottom: 1rem;
-	}
-
-	.portfolio__title {
-		font-size: var(--text-title);
-		transform: translateY(-100%);
-		transition: 0.4s;
-		padding: 0.5rem;
-		background: #0000004a;
-		width: 19.1rem;
-		border-radius: 0 13px 0 0;
-		backdrop-filter: blur(10px);
-		padding-left: 2rem;
-	}
-	.portfolio__content {
-		margin-left: 2rem;
-		margin-left: 2rem;
-	}
-
-	.skills__used {
-		display: flex;
-		width: 100%;
-		justify-content: flex-start;
-		gap: 1rem;
-		align-items: center;
-		margin-bottom: 2rem;
-	}
-	.iconify {
-		width: 20px;
-		height: 20px;
-		font-size: 20px;
-	}
-	.portfolio__links {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		gap: 2rem;
-	}
-	.portfolio__card:hover .portfolio__title {
-		transform: translateY(0%);
-		margin-bottom: 2rem;
-		backdrop-filter: unset;
-	}
-	.portfolio__card:hover .portfolio__description {
-		text-overflow: unset;
-		width: unset;
-		overflow: unset;
-		white-space: unset;
-	}
-	.portfolio__card:hover > .portfolio__card--b {
-		transform: translateY(-0%);
-	}
 </style>
+
+<script>
+	import { getIMGAverageColor } from '../utils/average-img-color/average-img-color';
+
+	const $cards = document.querySelectorAll('.card__portfolio');
+	$cards.forEach((card) => {
+		const $container = card.querySelector<HTMLDivElement>(
+			'.descripcion__container'
+		);
+		const $img = card.querySelector('img');
+		if (!$img || !$container) return;
+
+		const setBg = () => {
+			const [rbgString] = getIMGAverageColor($img, .7);
+			$container.style.background = rbgString;
+		};
+		setBg();
+		$img.onload = setBg;
+	});
+</script>
