@@ -1,16 +1,32 @@
 ---
 import './card-portfolio.css';
 import type { CardPortfolioProps as Props } from './types/cardPortfolio.type';
-const { titulo, descripcion, imgSrc, imageAlt, skills, repoURL, demoURL } =
-	Astro.props;
+const {
+	titulo,
+	descripcion,
+	imgSrc,
+	imageAlt,
+	skills,
+	repoURL,
+	demoURL,
+	averageBrightness,
+} = Astro.props;
 ---
 
 <div class="card__portfolio">
-	<img src={imgSrc} alt={imageAlt} height={130} width={332} />
+	<img
+		src={imgSrc}
+		alt={imageAlt}
+		crossorigin="anonymous"
+		height={130}
+		width={332}
+		loading="lazy"
+		average-brightness={averageBrightness}
+	/>
 
 	<div class="descripcion__container">
-        <h2>{titulo}</h2>
-        <div class="descripcion">
+		<h2>{titulo}</h2>
+		<div class="descripcion">
 			<p>{descripcion}</p>
 
 			<div class="skills">

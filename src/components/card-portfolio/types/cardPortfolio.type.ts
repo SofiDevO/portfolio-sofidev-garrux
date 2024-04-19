@@ -6,4 +6,5 @@ export interface CardPortfolioProps {
 	skills: string[];
 	repoURL: string;
 	demoURL: string;
+	averageBrightness?: number;
 }

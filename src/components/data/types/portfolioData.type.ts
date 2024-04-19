@@ -7,4 +7,5 @@ export interface PortafolioData {
 	demoURL: string;
 	repoURL: string;
 	anim: string;
+	averageBrightness?: number;
 }
