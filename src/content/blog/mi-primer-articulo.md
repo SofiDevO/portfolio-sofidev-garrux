@@ -1,11 +1,11 @@
 ---
-title: "JavaScript:Funciones y ambito de las variables"
-description: "Funciones y Comprendiendo Variables"
-pubDate: 'Mar 12 2024'
+title: "JavaScript:Crea tu portafolio con astro"
+description: "Funciones y Comprendiendo Variables, soy el post más nuevo"
+pubDate: 'May 1 2024'
 heroImage: "../img/monachina.jpg"
 ---
 
-## JavaScript: Explorando Funciones y Comprendiendo Variables
+
 
 ![javascript image](/img/monachina.jpg)
 

@@ -2,10 +2,9 @@
 import './card-portfolio.css';
 import type { CardPortfolioProps as Props } from './types/cardPortfolio.type';
 const {
-	titulo,
+	title,
 	descripcion,
 	imgSrc,
-	imageAlt,
 	skills,
 	repoURL,
 	demoURL,
@@ -16,7 +15,7 @@ const {
 <div class="card__portfolio">
 	<img
 		src={imgSrc}
-		alt={imageAlt}
+		alt={title}
 		crossorigin="anonymous"
 		height={130}
 		width={332}
@@ -25,7 +24,7 @@ const {
 	/>
 
 	<div class="descripcion__container">
-		<h2>{titulo}</h2>
+		<h2 class="card__title">{title}</h2>
 		<div class="descripcion">
 			<p>{descripcion}</p>
 

@@ -1,7 +1,7 @@
 ---
-title: "JavaScript:Funciones y ambito de las variables"
-description: "Funciones y Comprendiendo Variables"
-pubDate: 'Apr 11 2024'
+title: "JavaScript:Tutorial Menú Hamburguesa"
+description: "Soy un post reciente"
+pubDate: 'Apr 30 2024'
 heroImage: "../img/monachina2.jpg"
 ---
 

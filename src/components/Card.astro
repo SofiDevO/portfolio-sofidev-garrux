@@ -1,8 +1,9 @@
 ---
+import FormattedDate from "./FormattedDate.astro";
 const { title, img, content,href } = Astro.props;
 ---
 
-<a href={href} class="block rounded-xl overflow-hidden hover:shadow-lg">
+<a href={href} class="block rounded-xl max-w-[30rem] overflow-hidden hover:shadow-lg">
   <img
     alt={title}
     src={img}
@@ -10,6 +11,7 @@ const { title, img, content,href } = Astro.props;
   />
   <div class="p-4 bg-fuchsia-200">
     <h2 class="text-2xl font-semibold">{title}</h2>
+    <slot name="date"/>
     <p class="mt-2 text-base">{content}</p>
   </div>
 </a>

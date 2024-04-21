@@ -1,6 +1,6 @@
 export interface PortafolioData {
 	imgSrc: string;
-	titulo: string;
+	title: string;
 	skills: string[];
 	descripcion: string;
 	imgAlt?: string;

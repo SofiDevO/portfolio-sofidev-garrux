@@ -47,12 +47,11 @@
 	--text-large: 1.6rem;
 	--text-x-large: 2rem;
 	--text-xx-large: 2.4rem;
-	--text-xxx-large: 6.6rem;
+	--text-xxx-large: 6.5rem;
 	--text-title: 2rem;
 	--text-general: 1.6rem;
 	--text-button: 1.2rem;
-	--font-montserrat: "Montserrat", sans-serif;
-
+	--font-montserrat: 'Montserrat', sans-serif;
 
 	--hero-bg: linear-gradient(
 		-54deg,
@@ -60,11 +59,12 @@
 		var(--primary-20),
 		var(--primary-0) 51%
 	);
-	--text-gradient: -webkit-linear-gradient(#08ffe6, #bb01b1);
+	--text-gradient: radial-gradient(circle farthest-corner at center center, #58F9FF 0%, #DF44E7 100%);
 }
 html {
-	font-family: var(--font-montserrat)!important;
+	font-family: var(--font-montserrat) !important;
 	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 body {
 	width: 100%;
@@ -77,5 +77,10 @@ main {
 .color__gradiente {
 	background: var(--text-gradient);
 	-webkit-background-clip: text;
+	background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.max__width {
+	max-width: 117.8rem;
 }
