@@ -4,7 +4,10 @@ import { getPortafolioData } from './data/portfolioData';
 import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
-<section class="flex-col w-full h-auto justify-center flex-wrap">
+<section
+	id="potafolio"
+	class="flex flex-col w-full h-auto justify-center items-center"
+>
 	<Title contenido="Portafolio" />
 	<div class="portfolio__elements">
 		{getPortafolioData.map((props) => <Card {...props} />)}
@@ -15,11 +18,16 @@ import Card from './card-portfolio/CardPortfolio.astro';
 	.portfolio__elements {
 		display: flex;
 		width: 100%;
-		max-width: 1920px;
 		align-items: center;
 		justify-content: center;
-		gap: 2rem;
+		align-self: center;
+		gap: 9rem;
 		flex-wrap: wrap;
+	}
+	@media screen and (max-width:768px) {
+		.portfolio__elements{
+			max-width: 30rem;
+		}
 	}
 </style>
 
@@ -35,7 +43,7 @@ import Card from './card-portfolio/CardPortfolio.astro';
 		if (!$img || !$container) return;
 
 		const setBg = () => {
-			const [rbgString] = getIMGAverageColor($img, .7);
+			const [rbgString] = getIMGAverageColor($img, 0.7);
 			$container.style.background = rbgString;
 		};
 		setBg();

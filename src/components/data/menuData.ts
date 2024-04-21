@@ -1,5 +1,5 @@
 export const mainMenu = [
-     {link:"#", content:"Portafolio"},
+     {link:"#potafolio", content:"Portafolio"},
      {link:"#", content:"About"},
      {link:"#", content:"Blog"}
 ]

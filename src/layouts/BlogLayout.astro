@@ -1,22 +1,32 @@
 ---
+
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/header/Header.astro";
+import {  menuBlog } from "../components/data/menuData";
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 type Props = CollectionEntry<"blog">["data"];
+import "../styles/global.css"
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Blog</title>
+    <link rel="icon" type="image/svg+xml" href="../../img/jhon-doe.webp" />
+    <title> {title}</title>
   </head>
   <body>
-    <main>
-      <section>
+    <Header  origin={menuBlog} name="Jhon Doe"/>
+    <main class="max__width self-center pt-[13rem]" >
+      <div class="text-center" >
+        <h1 class="text-4xl text-center font-extrabold color__gradiente" >{title}</h1>
+        <FormattedDate date={pubDate} />
+      </div>
+      <section class="flex flex-col w-full px-5 pt-10">
         <slot />
       </section>
     </main>

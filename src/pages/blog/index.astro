@@ -1,34 +1,32 @@
 ---
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import Layout from "../../layouts/BlogLayout.astro";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+import { getCollection } from 'astro:content';
+import FormattedDate from '../../components/FormattedDate.astro';
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<Layout title="Blog">
-  <section>
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <a class="w-[40rem]" href={`/blog/${post.slug}/`}>
-              <img
-                src={post.data.heroImage}
-                width={720}
-                height={360}
-                alt={post.data.title}
-              />
-              <div>
-                <h4>{post.data.title}</h4>
-                <p>{post.data.description}</p>
-                <FormattedDate date={post.data.pubDate} />
-              </div>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-</Layout>
+
+	<section>
+		<ul>
+			{
+				posts.map((post) => (
+					<li>
+						<a class="w-[40rem] h-auto" href={`/blog/${post.slug}/`}>
+              <FormattedDate date={post.data.pubDate} />
+							<img
+								src={post.data.heroImage}
+								alt={post.data.title}
+							/>
+							<div class="flex flex-col min-h-10">
+								<h4>{post.data.title}</h4>
+								<p
+                class="text-xl text-white"
+                >{post.data.description}</p>
+							</div>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>

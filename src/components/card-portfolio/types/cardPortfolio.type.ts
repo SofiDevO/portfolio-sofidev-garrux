@@ -1,8 +1,7 @@
 export interface CardPortfolioProps {
-	titulo: string;
+	title: string;
 	descripcion: string;
 	imgSrc: string;
-	imageAlt?: string;
 	skills: string[];
 	repoURL: string;
 	demoURL: string;

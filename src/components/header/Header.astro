@@ -7,12 +7,15 @@ const { origin, name } = Astro.props;
 	<div class="header__container">
 		<a href="/" class="profile">
 			<img
-				src="https://itssofi.dev/img/avatar-black.webp"
+				class="header__img"
+				src="../../img/jhon-doe.webp"
 				alt="sofiDev img"
 				width="40px"
 				height="40px"
 			/>
-			<h1 class="color__gradiente header__title">{name}</h1>
+			<h3 class="color__gradiente header__title">
+				{name}
+			</h3><!-- No puede ir un h1 en el header. Se cambió por h3 -->
 		</a>
 		<nav class="links">
 			<ul class="header__list">
