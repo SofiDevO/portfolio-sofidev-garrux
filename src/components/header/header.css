@@ -24,11 +24,13 @@
 	flex-wrap: wrap;
 }
 
-.header .header__img {
+.header .img__container {
 	border-radius: 50%;
+	overflow: hidden;
+	transition: .35s transform;
 }
 
-.header .header__img:hover {
+.header .img__container:hover {
 	transform: scale(1.1);
 }
 
