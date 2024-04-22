@@ -55,16 +55,11 @@
 
 	--site-bg: var(--primary-0);
 	--hero-bg: linear-gradient(
-			-54deg,
-			var(--primary-0) -23%,
-			#44228800,
-			var(--primary-0) 51%
-		),
-		radial-gradient(
-			161.15% 86.16% at 66.84% 67.32%,
-			var(--primary-20) 11%,
-			#190230 40.23%
-		);
+		-54deg,
+		var(--primary-0) -23%,
+		var(--primary-20),
+		var(--primary-0) 51%
+	);
 
 	--text-gradient: radial-gradient(
 		circle farthest-corner at center center,
