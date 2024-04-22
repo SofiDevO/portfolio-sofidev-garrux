@@ -53,22 +53,19 @@
 	--text-button: 1.2rem;
 	--font-montserrat: 'Montserrat', sans-serif;
 
-	--site-bg: linear-gradient(
-		-54deg,
-		var(--primary-0) -23%,
-		var(--primary-20),
-		var(--primary-0) 51%
-	);
-	--header-bg: linear-gradient(
-			179deg,
-			rgba(53, 22, 105, 0) 68.64%,
-			#190230 97.71%
+	--site-bg: var(--primary-0);
+	--hero-bg: linear-gradient(
+			-54deg,
+			var(--primary-0) -23%,
+			#44228800,
+			var(--primary-0) 51%
 		),
 		radial-gradient(
 			161.15% 86.16% at 66.84% 67.32%,
-			#428 0%,
-			#190230 57.23%
+			var(--primary-20) 11%,
+			#190230 40.23%
 		);
+
 	--text-gradient: radial-gradient(
 		circle farthest-corner at center center,
 		#58f9ff 0%,
@@ -82,6 +79,7 @@ html {
 }
 body {
 	width: 100%;
+	background: var(--site-bg) no-repeat;
 	background: var(--site-bg) no-repeat;
 }
 main {
