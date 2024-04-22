@@ -1,7 +1,7 @@
 .hero {
 	padding: 6rem 2.2rem 0 2.2rem;
 	width: 100%;
-	height: auto;
+	height: 100vh;
 	min-height: 100dvh;
 	background-size: 200%;
 	display: flex;
@@ -12,6 +12,7 @@
 	align-items: center;
 	flex-wrap: wrap-reverse;
 	position: relative;
+	justify-content: center;
 }
 
 .hero::after {
@@ -31,19 +32,23 @@
 }
 
 .hero .hero__container {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr auto;
 	width: 100%;
 	max-width: 108rem;
+	gap: 8rem;
+}
+
+.hero .hero__text {
+	font-size: var(--text-xx-large);
 }
 
 .hero__container .text__content {
 	font-weight: 600;
 	display: flex;
 	flex-direction: column;
-	gap: 22px;
+	justify-content: center;
+	gap: 4rem;
 }
 
 .hero__container .text__content .hero__title {
