@@ -10,59 +10,67 @@
 	animation: presentation 3s linear forwards;
 	align-items: center;
 	flex-wrap: wrap-reverse;
-	.hero__container {
-		flex: 1;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-		.text__content {
-			font-weight: 600;
-			display: flex;
-			flex-direction: column;
-			gap: 22px;
-			.hero__title {
-				font-size: var(--text-xxx-large);
-				line-height: var(--text-xxx-large);
-			}
-			p {
-				font-size: var(--text-x-large);
-				font-weight: normal;
-				color: var(--primary-90);
-				max-width: 80%;
-			}
-		}
-	}
-	.hero__img {
-		width: 100%;
-		max-width: 38rem;
-		border-radius: 50%;
-		height: auto;
-	}
+	background: var(--hero-bg);
+}
+
+.hero .hero__img {
+	width: 100%;
+	max-width: 38rem;
+	border-radius: 50%;
+	height: auto;
+}
+
+.hero .hero__container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.hero__container .text__content {
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+.hero__container .text__content .hero__title {
+	font-size: var(--text-xxx-large);
+	line-height: var(--text-xxx-large);
+}
+
+.hero__container .hero__title p {
+	font-size: var(--text-x-large);
+	font-weight: normal;
+	color: var(--primary-90);
+	max-width: 80%;
 }
 
 @media screen and (max-width: 768px) {
 	.hero {
 		padding: 12rem 0 5rem 0;
-		.hero__container {
-			max-width: 100%;
-			gap: 0;
-			flex-direction: column-reverse;
-			justify-content: center;
-			align-items: center;
-			.text__content {
-				align-items: center;
-				.hero__title {
-					font-size: 4.5rem;
-					text-align: center;
-				}
-			}
-		}
-		.hero__img {
-			max-width: 28rem;
-		}
+	}
+	.hero .hero__img {
+		max-width: 28rem;
+	}
+	.hero .hero__container {
+		max-width: 100%;
+		gap: 0;
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+	.hero .text__content {
+		align-items: center;
+	}
+
+	.hero .text__content .hero__title {
+		font-size: 4.5rem;
+		text-align: center;
 	}
 }
+
 @keyframes presentation {
 	0% {
 		background-size: 200%;
