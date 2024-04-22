@@ -11,6 +11,16 @@
 	animation: presentation 3s linear forwards;
 	align-items: center;
 	flex-wrap: wrap-reverse;
+	position: relative;
+}
+
+.hero::after {
+	content: '';
+	position: absolute;
+	height: 6rem;
+	width: 100%;
+	background: linear-gradient(0deg, var(--primary-0), #0000);
+	bottom: 0;
 }
 
 .hero .hero__img {
