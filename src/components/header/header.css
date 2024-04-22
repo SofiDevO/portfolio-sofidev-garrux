@@ -7,77 +7,82 @@
 	color: var(--on-primary);
 	position: fixed;
 	z-index: 3;
-
-	.profile {
-		display: flex;
-		border-radius: 50%;
-		align-items: center;
-		gap: 1.5rem;
-		.header__img {
-			border-radius: 50%;
-		}
-
-		.header__title {
-			font-size: var(--text-title);
-			font-weight: 600;
-			cursor: pointer;
-		}
-	}
-	.header__img:hover {
-		transform: scale(1.1);
-	}
-	.header__container {
-		display: flex;
-		width: 100%;
-		max-width: 108rem;
-		justify-content: space-between;
-		background: #00000033;
-		backdrop-filter: blur(20px);
-		padding: 1rem 2rem;
-		border-radius: 14px;
-		height: auto;
-		min-height: 7rem;
-		border: 0.03px solid #7c39fd47;
-		flex-wrap: wrap;
-	}
-	.header__list {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		gap: 2rem;
-		margin-right: 4.4rem;
-	}
-
-	.links {
-		display: flex;
-		gap: 22px;
-		font-size: var(--text-general);
-
-		a {
-			position: relative;
-		}
-
-		a::after {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			content: '';
-			width: 100%;
-			transform: scaleX(0);
-			transform-origin: 0;
-			height: 2px;
-			background: var(--primary);
-			transition: 0.35s transform;
-		}
-		a:hover {
-			color: var(--primary-90);
-			&::after {
-				transform: scale(1);
-			}
-		}
-	}
 }
 
+.header .header__container {
+	display: flex;
+	width: 100%;
+	max-width: 108rem;
+	justify-content: space-between;
+	background: #00000033;
+	backdrop-filter: blur(20px);
+	padding: 1rem 2rem;
+	border-radius: 14px;
+	height: auto;
+	min-height: 7rem;
+	border: 0.03px solid #7c39fd47;
+	flex-wrap: wrap;
+}
+
+.header .header__img {
+	border-radius: 50%;
+}
+
+.header .header__img:hover {
+	transform: scale(1.1);
+}
+
+.header .profile {
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.header .profile .header__title {
+	font-size: var(--text-title);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.header .header__list {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 2rem;
+	margin-right: 4.4rem;
+}
+
+.header .links {
+	display: flex;
+	gap: 22px;
+	font-size: var(--text-general);
+}
+
+.header .links a {
+	position: relative;
+}
+
+.header .links a::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: 0;
+	height: 2px;
+	background: var(--primary);
+	transition: 0.35s transform;
+}
+
+.header .links a:hover {
+	color: var(--primary-90);
+}
+
+.header .links a:hover::after {
+	transform: scale(1);
+}
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 1rem;
