@@ -1,30 +1,29 @@
 ---
 import '../hero/hero.css';
-const {href,texto} = Astro.props;
+const { href, texto } = Astro.props;
 ---
 
-<a class="primary button" href={href} >{texto}</a>
-
+<a class="primary button" href={href}>{texto}</a>
 
 <style>
-    .button {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 12px 44px;
-				background: var(--primary);
-				border-radius: 100px;
-				font-size: var(--text-xx-large);
-				transition: 0.35s opacity;
-				min-width: 26rem;
-				max-width: max-content;
+	.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 12px 44px;
+		background: var(--primary);
+		border-radius: 100px;
+		font-size: var(--text-xx-large);
+		transition: 0.35s opacity;
+		min-width: 26rem;
+		max-width: max-content;
 
-                color: var(--primary-90);
-			}
-			.button:hover {
-				opacity: 0.7;
-			}
-			.button:active {
-				opacity: 0.5;
-			}
+		color: var(--primary-90);
+	}
+	.button:hover {
+		opacity: 0.7;
+	}
+	.button:active {
+		opacity: 0.5;
+	}
 </style>
