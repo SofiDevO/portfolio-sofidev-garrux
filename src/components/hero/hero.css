@@ -1,5 +1,5 @@
 .hero {
-	padding: 4rem 2.2rem 0 2.2rem;
+	padding: 6rem 2.2rem 0 2.2rem;
 	width: 100%;
 	height: auto;
 	min-height: 100dvh;
@@ -36,6 +36,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	max-width: 108rem;
 }
 
 .hero__container .text__content {
