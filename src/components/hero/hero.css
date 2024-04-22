@@ -10,7 +10,6 @@
 	animation: presentation 3s linear forwards;
 	align-items: center;
 	flex-wrap: wrap-reverse;
-	background: var(--hero-bg);
 }
 
 .hero .hero__img {
