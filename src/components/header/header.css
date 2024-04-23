@@ -27,7 +27,7 @@
 .header .img__container {
 	border-radius: 50%;
 	overflow: hidden;
-	transition: .35s transform;
+	transition: 0.35s transform;
 }
 
 .header .img__container:hover {
@@ -85,8 +85,90 @@
 .header .links a:hover::after {
 	transform: scale(1);
 }
+.icons {
+	display: none;
+}
+.menu__btn {
+	display: none;
+}
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 1rem;
+	}
+	.header .links {
+		position: fixed;
+		width: 100%;
+		top: calc(100vh - 11rem);
+		justify-content: center;
+		align-items: center;
+		right: 0;
+		align-self: center;
+		flex-direction: column;
+		pointer-events: none;
+	}
+
+	.header .header__list {
+		margin-right: 0;
+		z-index: 2;
+		background: #1c0544;
+		justify-content: center;
+		align-items: center;
+		border-radius: 14px;
+		width: 100%;
+		padding: 0.8rem 1rem;
+		border: 1px solid #dc5898;
+		align-self: center;
+		opacity: 0;
+		pointer-events: none;
+	}
+	.links:focus-within .header__list {
+		opacity: 1;
+		pointer-events: all;
+	}
+	.links:focus-within .menu__btn {
+		opacity: 0;
+		pointer-events: none;
+	}
+	.links:not(:hover) .header__list {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.icon__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.icons {
+		display: block;
+	}
+	.menu__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem 2rem;
+		background: var(--surface);
+		border-radius: 100px;
+		font-size: var(--text-x-large);
+		transition: 0.35s opacity;
+		max-width: -moz-max-content;
+		max-width: max-content;
+		color: var(--main);
+		position: absolute;
+		border: 1px solid #dc5898;
+		pointer-events: all;
+		animation: linear scroll-btn;
+		animation-timeline: scroll();
+	}
+}
+
+@keyframes scroll-btn {
+	0%,
+	3% {
+		opacity: 0;
+	}
+	4% {
+		opacity: inherit;
+
 	}
 }
