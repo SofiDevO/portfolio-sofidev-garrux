@@ -71,6 +71,7 @@
 		max-width: 28rem;
 	}
 	.hero .hero__container {
+		display: flex;
 		max-width: 100%;
 		gap: 0;
 		flex-direction: column-reverse;
@@ -81,8 +82,8 @@
 		align-items: center;
 	}
 
-	.hero .text__content .hero__title {
-		font-size: 4.5rem;
+	.hero .hero__text {
+		font-size: var(--text-xx-large);
 		text-align: center;
 	}
 }

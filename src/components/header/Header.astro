@@ -19,12 +19,23 @@ const { origin, name } = Astro.props;
 				{name}
 			</h3><!-- No puede ir un h1 en el header. Se cambió por h3 -->
 		</a>
-		<nav class="links">
+		<nav class="links"   tabindex="0.1">
+			<button class="menu__btn" >Menú</button>
 			<ul class="header__list">
 				{
 					origin.map((data) => (
 						<li>
-							<a href={data.link}>{data.content}</a>
+							<a class="menu__link" href={data.link}>
+								<span class="icon__container" >
+									<iconify-icon
+										class="icons"
+										icon={data.icon}
+										width="20"
+										height="20"
+									/>
+									{data.content}
+								</span>
+							</a>
 						</li>
 					))
 				}
