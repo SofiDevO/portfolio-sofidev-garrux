@@ -52,7 +52,7 @@
 	--text-general: 1.6rem;
 	--text-button: 1.2rem;
 	--font-montserrat: 'Montserrat', sans-serif;
-
+	--max-width: 108rem;
 	--site-bg: var(--primary-0);
 	--hero-bg: linear-gradient(
 		-54deg,

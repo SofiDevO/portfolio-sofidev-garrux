@@ -35,7 +35,7 @@
 	display: grid;
 	grid-template-columns: 1fr auto;
 	width: 100%;
-	max-width: 108rem;
+	max-width: var(--max-width);
 	gap: 8rem;
 }
 

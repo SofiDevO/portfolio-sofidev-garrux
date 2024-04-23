@@ -12,7 +12,7 @@
 .header .header__container {
 	display: flex;
 	width: 100%;
-	max-width: 108rem;
+	max-width: var(--max-width);
 	justify-content: space-between;
 	background: #00000033;
 	backdrop-filter: blur(20px);

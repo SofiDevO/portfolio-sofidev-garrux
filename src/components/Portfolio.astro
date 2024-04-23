@@ -8,13 +8,18 @@ import Card from './card-portfolio/CardPortfolio.astro';
 	id="potafolio"
 	class="flex flex-col w-full h-auto justify-center items-center"
 >
-	<Title contenido="Portafolio" />
-	<div class="portfolio__elements">
-		{getPortafolioData.map((props) => <Card {...props} />)}
+	<div class="portfolio__container">
+		<Title contenido="Portafolio" />
+		<div class="portfolio__elements">
+			{getPortafolioData.map((props) => <Card {...props} />)}
+		</div>
 	</div>
 </section>
 
 <style>
+	.portfolio__container {
+		max-width: 108rem;
+	}
 	.portfolio__elements {
 		display: flex;
 		width: 100%;
@@ -24,8 +29,8 @@ import Card from './card-portfolio/CardPortfolio.astro';
 		gap: 9rem;
 		flex-wrap: wrap;
 	}
-	@media screen and (max-width:768px) {
-		.portfolio__elements{
+	@media screen and (max-width: 768px) {
+		.portfolio__elements {
 			max-width: 30rem;
 		}
 	}
