@@ -17,22 +17,12 @@ import Card from './card-portfolio/CardPortfolio.astro';
 </section>
 
 <style>
-	.portfolio__container {
-		max-width: 108rem;
-	}
 	.portfolio__elements {
+		max-width: var(--max-width);
 		display: flex;
-		width: 100%;
-		align-items: center;
 		justify-content: center;
-		align-self: center;
-		gap: 9rem;
 		flex-wrap: wrap;
-	}
-	@media screen and (max-width: 768px) {
-		.portfolio__elements {
-			max-width: 30rem;
-		}
+		gap: 4rem;
 	}
 </style>
 
