@@ -67,6 +67,9 @@
 		#df44e7 100%
 	);
 }
+*{
+	box-sizing: border-box;
+}
 html {
 	font-family: var(--font-montserrat) !important;
 	font-size: 62.5%;
@@ -79,6 +82,10 @@ body {
 }
 main {
 	align-self: center;
+}
+p{
+	color: var(--primary-100);
+	font-size: var(--text-general);
 }
 
 .color__gradiente {

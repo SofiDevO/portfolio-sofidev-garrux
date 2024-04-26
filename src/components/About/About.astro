@@ -1,0 +1,67 @@
+---
+import Title from '../atoms/Title.astro';
+import "./about.css"
+
+const socialLinks = [
+	{
+		title: 'LinkedIn',
+		icon: 'simple-icons:linkedin',
+		href: 'https://www.linkedin.com/in/sofidev/',
+	},
+	{
+		title: 'Instagram',
+		icon: 'mdi:instagram',
+		href: 'https://www.instagram.com/',
+	},
+	{
+		title: 'Tiwtter',
+		icon: 'ri:twitter-x-fill',
+		href: 'https://twitter.com/home',
+	},
+	{
+		title: 'CV',
+		icon: 'tabler:file-cv',
+		href: '../docs/cv_jhon_doe.pdf',
+	},
+];
+---
+
+<section class="about">
+	<div class="about__container">
+		<img
+			class="about__img"
+			src="https://www.bpocenter.com.bo/wp-content/uploads/2017/11/10.jpg"
+			alt="Foto de perfil de Jhon Doe"
+		/>
+
+		<div class="about__content">
+			<Title margin="1rem" contenido="Sobre mí" />
+			<p class="about__text">
+				Habla sobre tí, tu profesión, lo que te gusta, cual es tu
+				pasatiempos, que haces en tu ratos libres, que cosas te apasionan y
+				has aprendido, ¿porqué elegiste está profesión?, ¿Tienes mascota?
+				¿Te gusta ir a caminar al parque? ¿Estudiaste algo más? ¿En que eres
+				bueno?
+			</p>
+			<div class="icons__container">
+				{
+					socialLinks.map((data) => (
+						<a
+							href={data.href}
+							target="_blank"
+							rel="nofollow noreferrer noopener"
+						>
+							<iconify-icon
+								icon={data.icon}
+								width="35"
+								height="35"
+								style="color: #dcd8fc"
+							/>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+
+</section>
