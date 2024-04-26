@@ -1,14 +1,12 @@
 ---
-const { contenido } = Astro.props;
+const { contenido, margin } = Astro.props;
 ---
 
-<h2 class="color__gradiente">{contenido}</h2>
+<h2 class="color__gradiente" style=`margin-bottom:${margin}` >{contenido}</h2>
 
 <style>
 	h2 {
 		font-size: 5rem;
-		text-align: center;
-		margin-bottom: 3rem;
 		font-weight: 500;
 	}
 </style>

@@ -1,21 +1,17 @@
 /**
- *
- * @param img una imagen del dom, de ella se obtendrá su color promedio
- * @param brightness Que tanto brillo debe de tener el resultado del color
- * @param onerror
- * @returns ['rgb(r,g,b)', {r,g,b}]
+ * @SofiDev Esto es JSDOC, si consideras que puede ser complicado solo borralo, es un comentario, no afectará en nada
+ * @param {HTMLImageElement}img una imagen del dom, de ella se obtendrá su color promedio
+ * @param {number} brightness Que tanto brillo debe de tener el resultado del color
+ * @param {()=>void} onerror
+ * @returns {['rgb(0-255,0-255,0-255)', {red,green,blue}]}
  * @example
  * 	const [colorString, colorObject] = getIMGAverageColor(img, 1);
  */
-export const getIMGAverageColor = (
-	img: HTMLImageElement,
-	brightness = 1,
-	onerror?: (error: Error) => void
-): [string, object] => {
+export const getIMGAverageColor = (img, brightness = 1, onerror = () => {}) => {
 	// Se crea un canvas para poder acceder a los pixeles
 	const canvas = document.createElement('canvas');
 	const ctx = canvas.getContext('2d');
-	let data: Uint8ClampedArray;
+	let data;
 	canvas.width = img.width;
 	canvas.height = img.height;
 
@@ -32,7 +28,7 @@ export const getIMGAverageColor = (
 		const imageData = ctx.getImageData(0, 0, img.width, img.height);
 		data = imageData.data;
 	} catch (error) {
-		onerror?.(error as Error);
+		onerror?.(error);
 		return ['', {}];
 	}
 

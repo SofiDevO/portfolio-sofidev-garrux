@@ -1,6 +1,6 @@
 ---
 import Title from './atoms/Title.astro';
-import { getPortafolioData } from './data/portfolioData';
+import { getPortafolioData} from "../components/data/portfolioData.js"
 import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
@@ -8,26 +8,21 @@ import Card from './card-portfolio/CardPortfolio.astro';
 	id="potafolio"
 	class="flex flex-col w-full h-auto justify-center items-center"
 >
-	<Title contenido="Portafolio" />
-	<div class="portfolio__elements">
-		{getPortafolioData.map((props) => <Card {...props} />)}
+	<div class="portfolio__container">
+		<Title contenido="Portafolio" />
+		<div class="portfolio__elements">
+			{getPortafolioData.map((props) => <Card {...props} />)}
+		</div>
 	</div>
 </section>
 
 <style>
 	.portfolio__elements {
+		max-width: var(--max-width);
 		display: flex;
-		width: 100%;
-		align-items: center;
 		justify-content: center;
-		align-self: center;
-		gap: 9rem;
 		flex-wrap: wrap;
-	}
-	@media screen and (max-width:768px) {
-		.portfolio__elements{
-			max-width: 30rem;
-		}
+		gap: 4rem;
 	}
 </style>
 

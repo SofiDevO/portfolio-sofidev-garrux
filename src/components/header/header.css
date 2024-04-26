@@ -7,79 +7,168 @@
 	color: var(--on-primary);
 	position: fixed;
 	z-index: 3;
-
-	.profile {
-		display: flex;
-		border-radius: 50%;
-		align-items: center;
-		gap: 1.5rem;
-		.header__img {
-			border-radius: 50%;
-		}
-
-		.header__title {
-			font-size: var(--text-title);
-			font-weight: 600;
-			cursor: pointer;
-		}
-	}
-	.header__img:hover {
-		transform: scale(1.1);
-	}
-	.header__container {
-		display: flex;
-		width: 100%;
-		max-width: 108rem;
-		justify-content: space-between;
-		background: #00000033;
-		backdrop-filter: blur(20px);
-		padding: 1rem 2rem;
-		border-radius: 14px;
-		height: auto;
-		min-height: 7rem;
-		border: 0.03px solid #7c39fd47;
-		flex-wrap: wrap;
-	}
-	.header__list {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		gap: 2rem;
-		margin-right: 4.4rem;
-	}
-
-	.links {
-		display: flex;
-		gap: 22px;
-		font-size: var(--text-general);
-
-		a {
-			position: relative;
-		}
-
-		a::after {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			content: '';
-			width: 100%;
-			transform: scaleX(0);
-			transform-origin: 0;
-			height: 2px;
-			background: var(--primary);
-			transition: 0.35s transform;
-		}
-		a:hover {
-			color: var(--primary-90);
-			&::after {
-				transform: scale(1);
-			}
-		}
-	}
 }
 
+.header .header__container {
+	display: flex;
+	width: 100%;
+	max-width: var(--max-width);
+	justify-content: space-between;
+	background: #00000033;
+	backdrop-filter: blur(20px);
+	padding: 1rem 2rem;
+	border-radius: 14px;
+	height: auto;
+	min-height: 7rem;
+	border: 0.03px solid #7c39fd47;
+	flex-wrap: wrap;
+}
+
+.header .img__container {
+	border-radius: 50%;
+	overflow: hidden;
+	transition: 0.35s transform;
+}
+
+.header .img__container:hover {
+	transform: scale(1.1);
+}
+
+.header .profile {
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.header .profile .header__title {
+	font-size: var(--text-title);
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.header .header__list {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 2rem;
+	margin-right: 4.4rem;
+}
+
+.header .links {
+	display: flex;
+	gap: 22px;
+	font-size: var(--text-general);
+}
+
+.header .links a {
+	position: relative;
+}
+
+.header .links a::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: 0;
+	height: 2px;
+	background: var(--primary);
+	transition: 0.35s transform;
+}
+
+.header .links a:hover {
+	color: var(--primary-90);
+}
+
+.header .links a:hover::after {
+	transform: scale(1);
+}
+.icons {
+	display: none;
+}
+.menu__btn {
+	display: none;
+}
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 1rem;
+	}
+	.header .links {
+		position: fixed;
+		width: 100%;
+		top: calc(100vh - 11rem);
+		justify-content: center;
+		align-items: center;
+		right: 0;
+		align-self: center;
+		flex-direction: column;
+		pointer-events: none;
+	}
+
+	.header .header__list {
+		margin-right: 0;
+		z-index: 2;
+		background: #1c0544;
+		justify-content: center;
+		align-items: center;
+		border-radius: 14px;
+		width: 100%;
+		padding: 0.8rem 1rem;
+		border: 1px solid #dc5898;
+		align-self: center;
+		opacity: 0;
+		pointer-events: none;
+	}
+	.links:focus-within .header__list {
+		opacity: 1;
+		pointer-events: all;
+	}
+	.links:focus-within .menu__btn {
+		opacity: 0;
+		pointer-events: none;
+	}
+	.links:not(:hover) .header__list {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.icon__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.icons {
+		display: block;
+	}
+	.menu__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem 2rem;
+		background: var(--surface);
+		border-radius: 100px;
+		font-size: var(--text-x-large);
+		transition: 0.35s opacity;
+		max-width: -moz-max-content;
+		max-width: max-content;
+		color: var(--main);
+		position: absolute;
+		border: 1px solid #dc5898;
+		pointer-events: all;
+		animation: linear scroll-btn;
+		animation-timeline: scroll();
+	}
+}
+
+@keyframes scroll-btn {
+	0%,
+	3% {
+		opacity: 0;
+	}
+	4% {
+		opacity: inherit;
+
 	}
 }
