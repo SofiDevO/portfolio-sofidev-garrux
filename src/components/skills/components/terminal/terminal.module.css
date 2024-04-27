@@ -12,7 +12,7 @@
 .header {
 	height: 30px;
 	width: 100%;
-	background: #211b2b;
+	background: var(--terminal-title-bar-background, #211b2b);
 	display: flex;
 	align-items: center;
 	padding: 0 11px;
@@ -40,12 +40,12 @@
 }
 
 .maximize {
-	background: var(--terminal-maximize, #48ff86);
+	background: var(--terminal-maximize-btn, #48ff86);
 	transform: rotate(45deg);
 }
 
 .close {
-	background: var(--terminal-close, #f30e45);
+	background: var(--terminal-close-btn, #f30e45);
 }
 
 .body {
