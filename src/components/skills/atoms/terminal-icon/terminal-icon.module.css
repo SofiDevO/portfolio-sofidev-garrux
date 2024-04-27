@@ -1,0 +1,30 @@
+.base {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.base {
+	width: min-content;
+	color: var(--icon-color);
+}
+.icon {
+	font-size: 7rem;
+}
+
+.name {
+	font-size: var(--text-general);
+}
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	background-color: currentColor;
+	-webkit-mask-image: var(--svg);
+	mask-image: var(--svg);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+}
