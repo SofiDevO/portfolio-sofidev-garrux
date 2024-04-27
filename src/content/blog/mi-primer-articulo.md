@@ -1,8 +1,8 @@
 ---
 title: "JavaScript:Crea tu portafolio con astro"
 description: "Funciones y Comprendiendo Variables, soy el post más nuevo"
-pubDate: 'May 1 2024'
-heroImage: "../img/monachina.jpg"
+pubDate: 'Apr 26 2024'
+heroImage: "../img/paisaje.jpg"
 ---
 
 
