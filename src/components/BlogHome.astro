@@ -1,28 +1,28 @@
 ---
-import Card from "../components/Card.astro";
 import Title from "../components/atoms/Title.astro";
 import { getCollection } from 'astro:content';
 import Boton from "./atoms/Boton.astro";
 import FormattedDate from "./FormattedDate.astro";
+import CardBlog from "./CardBlog.astro";
 const posts = (await getCollection('blog')).sort(
 (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<section id="Blog-post" class="flex flex-col items-center w-full h-full md:max-w-full max-w-[30rem]  justify-center flex-wrap px-4">
+<section id="blog" class="flex flex-col items-center w-full h-full md:max-w-full max-w-[30rem]  justify-center flex-wrap px-4">
 
-  <Title contenido="Mis artículos" />
+  <Title contenido="Mis artículos" margin="2rem"/>
   <div class="flex self-center gap-[20px] justify-center max-w-[30rem]  md:max-w-full flex-wrap flex-col md:flex-row">
     {
       posts.slice(0, 3).map((post) => (
-        <Card
+        <CardBlog
         title={post.data.title}
           content={post.data.description}
           img={post.data.heroImage}
           href={`/blog/${post.slug}/`}>
 
-         <FormattedDate  slot="date" date={post.data.pubDate} />
-         </Card>
+         <FormattedDate  slot="date" color="text-white" date={post.data.pubDate}/>
+         </CardBlog>
       ))
     }
   </div>
