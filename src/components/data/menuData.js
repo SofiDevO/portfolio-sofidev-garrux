@@ -5,7 +5,7 @@ export const mainMenu = [
      {link:"#blog", content:"Blog", icon:"mdi:blog"}
 ]
 export const menuBlog = [
-     {link:"#", content:"Portafolio"},
+     {link:"/", content:"Home"},
      {link:"#", content:"About"},
-     {link:"#", content:"Blog"}
+     {link:"#", content:"Portfolio"}
 ]

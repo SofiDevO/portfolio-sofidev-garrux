@@ -1,32 +1,38 @@
 ---
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import CardBlog from '../../components/CardBlog.astro';
+import Layout from "../../layouts/Layout.astro"
+import Header from '../../components/header/Header.astro';
+import { menuBlog } from '../../components/data/menuData';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
+<Layout title='blog'>
 
+	<Header origin={menuBlog} name="Jhon Doe"/>
 
-	<section>
-		<ul>
-			{
-				posts.map((post) => (
-					<li>
-						<a class="w-[40rem] h-auto" href={`/blog/${post.slug}/`}>
-              <FormattedDate date={post.data.pubDate} />
-							<img
-								src={post.data.heroImage}
-								alt={post.data.title}
-							/>
-							<div class="flex flex-col min-h-10">
-								<h4>{post.data.title}</h4>
-								<p
-                class="text-xl text-white"
-                >{post.data.description}</p>
-							</div>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+<section>
+	<ul>
+		{
+			posts.map((post) => (
+				<li>
+					<CardBlog
+						title={post.data.title}
+						content={post.data.description}
+						img={post.data.heroImage}
+						href={`/blog/${post.slug}/`}
+					>
+						<FormattedDate
+							slot="date"
+							color="text-white"
+							date={post.data.pubDate}
+						/>
+					</CardBlog>
+				</li>
+			))
+		}
+	</ul>
+</section>
+</Layout>
