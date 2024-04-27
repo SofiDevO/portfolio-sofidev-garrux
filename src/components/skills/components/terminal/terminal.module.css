@@ -1,0 +1,68 @@
+.terminal {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	min-width: 322px;
+	min-height: 250px;
+	border-radius: 11px;
+	overflow: hidden;
+}
+
+.header {
+	height: 30px;
+	width: 100%;
+	background: #211b2b;
+	display: flex;
+	align-items: center;
+	padding: 0 11px;
+	gap: 10px;
+}
+
+.header div {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	color: transparent;
+	transition: 0.35s color;
+	cursor: pointer;
+}
+.header div:hover {
+	color: var(--terminal-icons-color, #000a);
+}
+
+.minimize {
+	background: var(--terminal-minimize-btn, #ffae34);
+}
+
+.maximize {
+	background: var(--terminal-maximize, #48ff86);
+	transform: rotate(45deg);
+}
+
+.close {
+	background: var(--terminal-close, #f30e45);
+}
+
+.body {
+	flex: 1;
+	padding: 10px;
+	background: var(--terminal-background, #080011);
+}
+
+.user__line {
+	color: #fae7f5;
+	font-size: var(--text-general, 16px);
+}
+
+.user__name {
+	color: var(--terminal-user-color, #ca88d1);
+}
+
+.separator {
+	color: var(--terminal-separator-color, #5974ff);
+}
