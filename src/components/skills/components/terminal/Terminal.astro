@@ -1,6 +1,6 @@
 ---
 import terminal from './terminal.module.css';
-const { nombre, body } = Astro.props;
+const { nombre } = Astro.props;
 ---
 
 <div class={terminal.terminal}>
@@ -15,7 +15,7 @@ const { nombre, body } = Astro.props;
 			<span class={terminal.separator}>~</span>$ . printskills
 		</div>
 		<div class="content">
-			{body}
+			<slot />
 		</div>
 	</div>
 </div>
