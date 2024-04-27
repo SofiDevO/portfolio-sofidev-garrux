@@ -1,0 +1,14 @@
+---
+import terminalIcon from './terminal-icon.module.css';
+interface Props {
+	name: string;
+	src: string;
+	color: string;
+}
+const { name, src, color } = Astro.props;
+---
+
+<div class={terminalIcon.base} style=`--icon-color: ${color};`>
+	<div class={terminalIcon.icon} style=`--svg: url(${src})`></div>
+	<span class={terminalIcon.name}>{name}</span>
+</div>
