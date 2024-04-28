@@ -1,0 +1,25 @@
+.terminal__skills__container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	gap: 2.2rem;
+}
+.terminal__skills {
+	padding: 2.2rem 0;
+}
+
+.terminal__skills h2 {
+	font-size: var(--text-xx-large);
+	font-weight: 600;
+	color: var(--secondary-90);
+	padding: 2.2rem 0;
+}
+
+.terminal__skills {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}

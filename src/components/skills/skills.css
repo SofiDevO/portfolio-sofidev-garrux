@@ -1,0 +1,25 @@
+#skills {
+	display: flex;
+	max-width: calc(var(--max-width) + 2.2rem);
+	padding: 1.1rem;
+	gap: 2.2rem;
+	margin: 4rem auto;
+}
+
+#skills .text-content {
+	max-width: 40%;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+	#skills {
+		flex-direction: column-reverse;
+	}
+	#skills .text-content {
+		max-width: 100%;
+	}
+}

@@ -1,18 +1,21 @@
 ---
-
 import About from '../components/About/About.astro';
 import BlogHome from '../components/BlogHome.astro';
 import { mainMenu } from '../components/data/menuData';
 import Header from '../components/header/Header.astro';
 import Hero from '../components/hero/Hero.astro';
 import Portfolio from '../components/Portfolio.astro';
+import Skills from '../components/skills/Skills.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Jhon Doe | Fullstack Developer">
-	<Header origin={mainMenu} name="Jhon Doe"/>
-	<Hero />
-	<About/>
-	<Portfolio />
-	<BlogHome />
+	<Header origin={mainMenu} name="Jhon Doe" />
+	<main class="self-center w-full">
+		<Hero />
+		<About />
+		<Skills />
+		<Portfolio />
+		<BlogHome />
+	</main>
 </Layout>
