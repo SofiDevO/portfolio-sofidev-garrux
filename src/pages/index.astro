@@ -10,10 +10,12 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Jhon Doe | Fullstack Developer">
-	<Header origin={mainMenu} name="Jhon Doe"/>
-	<Hero />
-	<About />
-	<Skills />
-	<Portfolio />
-	<BlogHome />
+	<Header origin={mainMenu} name="Jhon Doe" />
+	<main class="self-center w-full">
+		<Hero />
+		<About />
+		<Skills />
+		<Portfolio />
+		<BlogHome />
+	</main>
 </Layout>

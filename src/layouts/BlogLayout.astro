@@ -21,10 +21,10 @@ import "../styles/global.css"
   </head>
   <body>
     <Header  origin={menuBlog} name="Jhon Doe"/>
-    <main class="max__width self-center pt-[13rem]" >
+    <main class="max__width flex-col items-center pt-[13rem]" >
       <div class="text-center" >
         <h1 class="text-4xl text-center font-extrabold color__gradiente" >{title}</h1>
-        <FormattedDate date={pubDate} />
+        <FormattedDate date={pubDate} color="color__gradiente" />
       </div>
       <section class="flex flex-col w-full px-5 pt-10">
         <slot />
