@@ -4,23 +4,23 @@ const { title, img, content, href } = Astro.props;
 ---
 <a
 	href={href}
-	class="card__parent group block rounded-[22px] w-[44.5rem] h-[32rem] overflow-hidden hover:shadow-lg"
+	class="card__parent group block rounded-[22px] w-[32.8rem] h-[26.6rem] overflow-hidden hover:shadow-lg"
 >
-	<div class="w-full h-[18rem] overflow-hidden">
+	<div class="w-full h-[14rem] overflow-hidden">
 		<img
 			alt={title}
 			src={img}
-			class="group-hover:scale-125 group-hover:saturate-50 h-56 w-full rounded-bl-xl object-cover sm:h-[19.1rem] lg:h-72 transition ease-in-out delay-150"
+			class="group-hover:scale-125 group-hover:saturate-50 h-56 w-full rounded-bl-xl object-cover sm:h-[19.1rem] lg:h-72 transition-transform ease-in-out delay-150"
 		/>
 	</div>
 	<div
 		class="flex-col items-start justify-center text-left p-4 bg-gradient-radial from-[#8b65fdde] to-[#3b236d]  rounded-b-xl gap-4 group-hover:bg-gradient-radial group-hover:from-[#4b3788de] group-hover:to-[#261746] h-[18rem]"
 	>
-		<h2 class="text--hover text-[2.1rem] font-semibold text-white">
+		<h2 class="text--hover text-[1.8rem] font-semibold text-white">
 			{title}
 		</h2>
 		<p
-			class="whitespace-nowrap overflow-hidden overflow-ellipsis mt-2 text-[1.6rem] text-white"
+			class="whitespace-nowrap overflow-hidden overflow-ellipsis mt-2 text-[1.3rem] text-white"
 		>
 			{content}
 		</p>
