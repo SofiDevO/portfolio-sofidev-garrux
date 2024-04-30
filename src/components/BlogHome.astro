@@ -10,10 +10,10 @@ const posts = (await getCollection('blog')).sort(
 
 ---
 
-<section id="blog" class="flex flex-col items-center w-full h-full md:max-w-full max-w-[30rem]  justify-center flex-wrap px-4">
+<section id="blog" class="flex flex-col items-center w-full h-full md:max-w-full  justify-center flex-wrap px-4">
 
   <Title contenido="Mis artículos" margin="2rem"/>
-  <div class="flex self-center gap-[20px] justify-center max-w-[30rem]  md:max-w-full flex-wrap flex-col md:flex-row">
+  <div class="flex self-center gap-[20px] justify-center min-w-[30rem]  md:max-w-full flex-wrap flex-col md:flex-row">
     {
       posts.slice(0, 3).map((post) => (
         <CardBlog
@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
           img={post.data.heroImage}
           href={`/blog/${post.slug}/`}>
 
-         <FormattedDate  slot="date" color="text-white" date={post.data.pubDate}/>
+         <FormattedDate  slot="date" clase="text-white" date={post.data.pubDate}/>
          </CardBlog>
       ))
     }

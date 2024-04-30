@@ -7,6 +7,7 @@ heroImage: "../img/paisaje.jpg"
 
 
 
+
 ![javascript image](/img/monachina.jpg)
 
 En esta segunda entrega de nuestra guía práctica de JavaScript, nos sumergiremos en el fascinante mundo de las funciones y exploraremos las sutilezas entre `var`, `let` y `const`. Prepárate para desentrañar estos conceptos cruciales en tu viaje por el desarrollo web.
@@ -58,6 +59,7 @@ saludar("Ana");
 // Salida: ¡Hola, Ana!
 ```
 
+
 #### Arrow Functions
 
 ```javascript
@@ -69,7 +71,9 @@ let producto = multiplicar(4, 6);
 
 Las funciones de flecha (`arrow functions`) son una forma más concisa de escribir funciones.
 
-## Variables: var, let y const
+### Variables: var, let y const
+
+![javascript image](/img/monachina.jpg)
 
 ### `var`
 

@@ -83,7 +83,7 @@
 	}
 
 	.hero .hero__text {
-		font-size: var(--text-xx-large);
+		font-size: var(--text-x-large);
 		text-align: center;
 	}
 }
