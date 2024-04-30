@@ -21,12 +21,12 @@ import "../styles/global.css"
   </head>
   <body>
     <Header  origin={menuBlog} name="Jhon Doe"/>
-    <main class="max__width flex-col items-center pt-[13rem]" >
+    <main class="w-full flex flex-col justify-center  items-center pt-[13rem]" >
       <div class="text-center" >
-        <h1 class="text-4xl text-center font-extrabold color__gradiente" >{title}</h1>
-        <FormattedDate date={pubDate} color="color__gradiente" />
+        <h1 class="text-4xl text-center font-extrabold color__gradiente mb-3" >{title}</h1>
+        <FormattedDate date={pubDate} clase="text-white text-2xl  " />
       </div>
-      <section class="flex flex-col w-full px-5 pt-10">
+      <section class="flex flex-col md:max-w-[69%]  max-w-[100%] min-w-[30rem]  px-5 pt-10 pb-[3rem] justify-center w-[80%">
         <slot />
       </section>
     </main>
