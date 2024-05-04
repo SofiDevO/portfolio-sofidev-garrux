@@ -82,7 +82,7 @@
 	.header .links {
 		position: fixed;
 		width: 100%;
-		top: calc(100vh - 11rem);
+		top: calc(100vh - 16rem);
 		justify-content: center;
 		align-items: center;
 		right: 0;
@@ -131,15 +131,15 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0.5rem 2rem;
-		background: var(--surface);
+		background: var(--hero-bg);
 		border-radius: 100px;
 		font-size: var(--text-x-large);
 		transition: 0.35s opacity;
 		max-width: -moz-max-content;
 		max-width: max-content;
-		color: var(--main);
+		color: #33f3c6;
 		position: absolute;
-		border: 1px solid #dc5898;
+		border: 2px solid #33f3c6;
 		pointer-events: all;
 		animation: linear scroll-btn;
 		animation-timeline: scroll();
@@ -148,10 +148,10 @@
 
 @keyframes scroll-btn {
 	0%,
-	3% {
+	1% {
 		opacity: 0;
 	}
-	4% {
+	2% {
 		opacity: inherit;
 
 	}
