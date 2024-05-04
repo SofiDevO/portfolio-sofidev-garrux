@@ -1,24 +1,12 @@
 ---
 import './header.css';
-const { origin, name } = Astro.props;
+const { origin } = Astro.props;
+import Logo from '../Logo.astro';
 ---
 
 <header class="header">
 	<div class="header__container">
-		<a href="/" class="profile">
-			<div class="img__container">
-				<img
-					class="header__img"
-					src="../../img/jhon-doe.webp"
-					alt="sofiDev img"
-					width="40px"
-					height="40px"
-				/>
-			</div>
-			<h3 class="color__gradiente header__title">
-				{name}
-			</h3><!-- No puede ir un h1 en el header. Se cambió por h3 -->
-		</a>
+		<Logo name="Jhon Doe"/>
 		<nav class="links"   tabindex="0.1">
 			<button class="menu__btn" >Menú</button>
 			<ul class="header__list">

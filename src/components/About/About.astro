@@ -1,29 +1,9 @@
 ---
+import SocialIcons from '../SocialIcons.astro';
 import Title from '../atoms/Title.astro';
 import "./about.css"
 
-const socialLinks = [
-	{
-		title: 'LinkedIn',
-		icon: 'simple-icons:linkedin',
-		href: 'https://www.linkedin.com/in/sofidev/',
-	},
-	{
-		title: 'Instagram',
-		icon: 'mdi:instagram',
-		href: 'https://www.instagram.com/',
-	},
-	{
-		title: 'Tiwtter',
-		icon: 'ri:twitter-x-fill',
-		href: 'https://twitter.com/home',
-	},
-	{
-		title: 'CV',
-		icon: 'tabler:file-cv',
-		href: '../docs/cv_jhon_doe.pdf',
-	},
-];
+
 ---
 
 <section id="about" class="about">
@@ -43,24 +23,7 @@ const socialLinks = [
 				¿Te gusta ir a caminar al parque? ¿Estudiaste algo más? ¿En que eres
 				bueno?
 			</p>
-			<div class="icons__container">
-				{
-					socialLinks.map((data) => (
-						<a
-							href={data.href}
-							target="_blank"
-							rel="nofollow noreferrer noopener"
-						>
-							<iconify-icon
-								icon={data.icon}
-								width="35"
-								height="35"
-								style="color: #dcd8fc"
-							/>
-						</a>
-					))
-				}
-			</div>
+			<SocialIcons width="25" height="25"/>
 		</div>
 	</div>
 

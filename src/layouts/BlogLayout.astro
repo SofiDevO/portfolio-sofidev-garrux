@@ -7,16 +7,23 @@ import {  menuBlog } from "../components/data/menuData";
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 type Props = CollectionEntry<"blog">["data"];
 import "../styles/global.css"
+import Footer from "../components/Footer/Footer.astro";
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
-
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="../../img/jhon-doe.webp" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
     <title> {title}</title>
   </head>
   <body>
@@ -30,5 +37,6 @@ import "../styles/global.css"
         <slot />
       </section>
     </main>
+    <Footer/>
   </body>
 </html>
