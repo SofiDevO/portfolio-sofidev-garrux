@@ -42,7 +42,11 @@
 
 
 @media screen and (max-width: 768px) {
-
+	.about__container {
+		padding: 8rem 3.1rem;
+		flex-direction: column-reverse;
+		align-items: center;
+	}
     .about__img{
         width: 29.5rem;
         height: 38.1rem;
