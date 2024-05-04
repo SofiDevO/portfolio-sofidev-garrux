@@ -1,0 +1,84 @@
+---
+const {width, height} = Astro.props;
+const socialLinks = [
+	{
+		title: 'LinkedIn',
+		icon: 'simple-icons:linkedin',
+		href: 'https://www.linkedin.com/in/sofidev/',
+
+	},
+	{
+		title: 'Instagram',
+		icon: 'mdi:instagram',
+		href: 'https://www.instagram.com/',
+
+	},
+	{
+		title: 'Tiwtter',
+		icon: 'ri:twitter-x-fill',
+		href: 'https://twitter.com/home',
+
+	},
+	{
+		title: 'CV',
+		icon: 'tabler:file-cv',
+		href: '../docs/cv_jhon_doe.pdf',
+
+	},
+];
+---
+
+<div class="icons__container">
+    {
+        socialLinks.map((data) => (
+            <a
+                href={data.href}
+                target="_blank"
+                rel="nofollow noreferrer noopener"
+            >
+                <iconify-icon
+					class=`skill__icon ${data.title}`
+                    icon={data.icon}
+                    width={width}
+                    height={height}
+                />
+            </a>
+        ))
+    }
+</div>
+
+<style>
+	.icons__container {
+		display: flex;
+    width: 29.6rem;
+    /* padding: 1.3rem 4rem; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.skill__icon{
+	color:#dcd8fc;
+}
+
+	.LinkedIn:hover{
+		color: #0e76a8;
+	}
+	.Instagram:hover{
+	color: #E1306C;
+	}
+	.Tiwtter:hover{
+	color: #0aa5f6;
+	}
+	.CV:hover{
+		color:#8e64ff;
+	}
+
+
+@media screen and (max-width: 768px) {
+	.about__container {
+		padding: 8rem 3.1rem;
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+}
+</style>

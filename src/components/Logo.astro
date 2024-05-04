@@ -1,0 +1,38 @@
+---
+const {name} = Astro.props;
+---
+
+<a href="/" class="profile">
+    <div class="img__container">
+        <img
+            class="header__img"
+            src="/img/jhon-doe.webp"
+            alt="sofiDev img"
+            width="40px"
+            height="40px"
+        />
+    </div>
+    <h3 class="color__gradiente header__title">
+        {name}
+    </h3>
+</a>
+
+<style>
+
+ .img__container {
+	border-radius: 50%;
+	overflow: hidden;
+	transition: 0.35s transform;
+}
+
+ .img__container:hover {
+	transform: scale(1.1);
+}
+
+ .profile {
+	display: flex;
+	border-radius: 50%;
+	align-items: center;
+	gap: 1.5rem;
+}
+</style>

@@ -24,22 +24,6 @@
 	flex-wrap: wrap;
 }
 
-.header .img__container {
-	border-radius: 50%;
-	overflow: hidden;
-	transition: 0.35s transform;
-}
-
-.header .img__container:hover {
-	transform: scale(1.1);
-}
-
-.header .profile {
-	display: flex;
-	border-radius: 50%;
-	align-items: center;
-	gap: 1.5rem;
-}
 
 .header .profile .header__title {
 	font-size: var(--text-title);

@@ -39,20 +39,10 @@
 	font-size: 2.1rem;
 	max-width: 70.19rem;
 }
-.icons__container {
-	display: flex;
-	width: 24.6rem;
-	padding: 2.3rem 1rem;
-	justify-content: space-between;
-	align-items: flex-start;
-}
+
 
 @media screen and (max-width: 768px) {
-	.about__container {
-		padding: 8rem 3.1rem;
-		flex-direction: column-reverse;
-		align-items: center;
-	}
+
     .about__img{
         width: 29.5rem;
         height: 38.1rem;

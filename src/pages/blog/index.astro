@@ -5,6 +5,7 @@ import CardBlog from '../../components/CardBlog.astro';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/header/Header.astro';
 import { menuBlog } from '../../components/data/menuData';
+import Footer from '../../components/Footer/Footer.astro';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -36,6 +37,7 @@ const posts = (await getCollection('blog')).sort(
 			</ul>
 		</section>
 	</main>
+	<Footer/>
 </Layout>
 
 <style>
