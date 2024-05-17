@@ -37,7 +37,7 @@ const posts = (await getCollection('blog')).sort(
 			</ul>
 		</section>
 	</main>
-	<Footer/>
+	<Footer />
 </Layout>
 
 <style>
@@ -47,6 +47,7 @@ const posts = (await getCollection('blog')).sort(
 		align-items: center;
 		margin-top: 0;
 	}
+
 	.blog__elements {
 		display: flex;
 		flex-wrap: wrap;
@@ -55,5 +56,12 @@ const posts = (await getCollection('blog')).sort(
 		justify-content: center;
 		width: 100%;
 		max-width: 1371px;
+	}
+	@media screen and (max-width: 768px) {
+		.blog__section {
+			margin-top: 8rem;
+			padding: 4rem 0;
+			min-height: 100dvh;
+		}
 	}
 </style>
