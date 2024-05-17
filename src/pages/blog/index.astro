@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
 <Layout title="blog">
 	<Header origin={menuBlog} name="Jhon Doe" />
 	<main class="self-center w-full">
-		<section class="blog__section">
+		<section class="blog__section min-h-[100dvh]">
 			<ul class="blog__elements">
 				{
 					posts.map((post) => (
@@ -27,7 +27,7 @@ const posts = (await getCollection('blog')).sort(
 							>
 								<FormattedDate
 									slot="date"
-									color="text-white"
+									clase="text-[--secondary-90] font-bold font-xl"
 									date={post.data.pubDate}
 								/>
 							</CardBlog>
@@ -45,7 +45,7 @@ const posts = (await getCollection('blog')).sort(
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 20rem;
+		margin-top: 0;
 	}
 	.blog__elements {
 		display: flex;

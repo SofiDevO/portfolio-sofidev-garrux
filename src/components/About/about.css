@@ -9,7 +9,7 @@
 .about__container {
 	display: flex;
 	padding: 11rem 13.1rem;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	justify-content: space-around;
 	gap: 4.4rem;
 }
@@ -32,7 +32,7 @@
 	flex-direction: column;
 	max-width: 75rem;
 	gap: 2.1rem;
-	justify-content: flex-end;
+	justify-content: center;
 }
 
 .about__text {
