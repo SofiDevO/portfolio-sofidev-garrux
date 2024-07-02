@@ -1,4 +1,5 @@
-
+### start using this template by running:
+ `npm create astro@latest -- --template SofiDevO/portfolio-sofidev-garrux`
 # Portfolio Template with Astro
 
 Welcome to the Portfolio Template built with Astro! This responsive template allows you to showcase all your projects with an amazing UI. Below you'll find instructions on how to use this template, including how to add new portfolio items, main dependencies, and examples of usage.
