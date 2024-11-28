@@ -83,6 +83,10 @@ export const getPortfolioData = portfolioData.map((item) => ({
 }));
 ```
 
+
+> [!NOTE]
+> For skills Icons you may use Garrux library [https://github.com/Garruxx/ascii-icons](https://github.com/Garruxx/ascii-icons)
+
 This data is then passed to the portfolio component as props.
 
 ## Adding Icons with Iconify
